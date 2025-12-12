@@ -76,12 +76,12 @@ export default function HeroSection() {
       {/* Slide Content */}
       <div className="absolute inset-0 flex items-center justify-end z-10">
         <div className="container mx-auto px-4">
-          <div className="max-w-2xl ml-auto">
+          <div className="max-w-2xl ml-auto relative">
             {slides.map((slide, index) => (
               <div
                 key={slide.id}
                 className={`transition-opacity duration-1000 ${
-                  index === currentSlide ? 'opacity-100' : 'opacity-0 absolute'
+                  index === currentSlide ? 'opacity-100 relative' : 'opacity-0 absolute inset-0'
                 }`}
               >
                 <h2 className="text-2xl font-normal text-white mb-4 tracking-wider uppercase">
