@@ -59,9 +59,9 @@ export default function Navbar() {
             <Image
               src="/images/logo.jpeg"
               alt="Hillora Coastal Resort"
-              width={150}
+              width={200}
               height={60}
-              className="h-12 md:h-14 w-auto object-contain"
+              className="h-12 md:h-16 w-auto object-contain"
               priority
             />
           </a>

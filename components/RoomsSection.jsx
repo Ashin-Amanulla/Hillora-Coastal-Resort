@@ -48,8 +48,14 @@ export default function RoomsSection() {
   };
 
   return (
-    <section id="rooms" className="py-20 bg-[#FAFAFA]">
-      <div className="container mx-auto px-4">
+    <section
+      id="rooms"
+      className="py-20 bg-[#FAFAFA] pattern-diagonal relative overflow-hidden"
+    >
+      {/* Decorative elements */}
+      <div className="decorative-shape w-40 h-40 bg-[#2D9B9E] top-20 right-10 animate-float" />
+      <div className="decorative-shape w-32 h-32 bg-[#FFA500] bottom-32 left-16 animate-float-delayed" />
+      <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16">
           <span className="text-sm font-semibold text-[#2D9B9E] uppercase tracking-wider block mb-3">
             Hillora Accommodations

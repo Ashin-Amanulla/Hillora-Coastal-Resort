@@ -84,6 +84,9 @@ export default function HeroSection() {
               className="object-cover"
               sizes="100vw"
             />
+            {/* Dark overlay for better text readability */}
+            <div className="absolute inset-0 bg-black/30" />
+            {/* Gradient overlay */}
             <div className="absolute inset-0 bg-gradient-to-br from-[#0D5E73]/50 via-[#2D9B9E]/40 to-transparent" />
           </div>
         ))}

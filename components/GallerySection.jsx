@@ -21,8 +21,8 @@ export default function GallerySection() {
 
   return (
     <>
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4">
+      <section className="py-16 bg-gradient-to-b from-[#F8F9FA] to-[#E9ECEF] pattern-grid relative">
+        <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-12">
             <span className="text-sm font-semibold text-[#2D9B9E] uppercase tracking-wider block mb-3">
               Gallery

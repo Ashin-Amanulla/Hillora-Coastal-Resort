@@ -20,8 +20,14 @@ export default function AboutSection() {
   };
 
   return (
-    <section id="about" className="py-20 bg-white">
-      <div className="container mx-auto px-4">
+    <section
+      id="about"
+      className="py-20 bg-gradient-to-br from-[#F5F1E8] via-white to-[#E8F4F5] relative overflow-hidden"
+    >
+      {/* Decorative floating shapes */}
+      <div className="decorative-shape w-64 h-64 bg-[#2D9B9E] -top-32 -left-32 animate-float" />
+      <div className="decorative-shape w-48 h-48 bg-[#FFA500] -bottom-24 -right-24 animate-float-delayed" />
+      <div className="container mx-auto px-4 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
           {/* Images */}
           <div className="order-2 lg:order-1 grid grid-cols-2 gap-4">

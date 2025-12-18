@@ -78,8 +78,11 @@ const itemVariants = {
 
 export default function FacilitiesGrid() {
   return (
-    <section id="facilities" className="py-24 bg-white">
-      <div className="container mx-auto px-4">
+    <section
+      id="facilities"
+      className="py-24 bg-white pattern-dots pattern-waves pattern-waves-bottom relative"
+    >
+      <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16">
           <span className="text-sm font-semibold text-[#2D9B9E] uppercase tracking-wider block mb-3">
             Holiday in Goa with Us
