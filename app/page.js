@@ -4,6 +4,7 @@ import BookingCTA from '@/components/BookingCTA';
 import FacilitiesGrid from '@/components/FacilitiesGrid';
 import AboutSection from '@/components/AboutSection';
 import RoomsSection from '@/components/RoomsSection';
+import RestaurantSection from '@/components/RestaurantSection';
 import GallerySection from '@/components/GallerySection';
 import Footer from '@/components/Footer';
 
@@ -16,6 +17,7 @@ export default function Home() {
       <FacilitiesGrid />
       <AboutSection />
       <RoomsSection />
+      <RestaurantSection />
       <GallerySection />
       <Footer />
     </main>

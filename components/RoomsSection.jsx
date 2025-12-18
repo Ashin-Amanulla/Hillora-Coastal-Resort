@@ -1,48 +1,48 @@
-'use client';
+"use client";
 
-import { motion } from 'framer-motion';
-import Image from 'next/image';
-import { Phone, ArrowRight, CheckCircle } from 'lucide-react';
+import { motion } from "framer-motion";
+import Image from "next/image";
+import { Phone, ArrowRight, CheckCircle } from "lucide-react";
 
 const rooms = [
   {
     id: 1,
-    name: 'Deluxe Room',
-    description: 'Spacious and elegantly designed rooms with modern amenities',
-    image: '/images/room-1.jpg',
-    features: ['AC & WiFi', 'Ocean View', '2 Guests'],
-    imagePosition: 'left',
+    name: "Deluxe Room",
+    description: "Spacious and elegantly designed rooms with modern amenities",
+    image: "/images/room-1.jpg",
+    features: ["AC & WiFi", "Ocean View", "2 Guests"],
+    imagePosition: "left",
   },
   {
     id: 2,
-    name: 'Superb Deluxe Room',
-    description: 'Premium accommodations with enhanced comfort and luxury',
-    image: '/images/room-2.jpg',
-    features: ['AC & WiFi', 'Balcony View', '3 Guests'],
-    imagePosition: 'right',
+    name: "Superb Deluxe Room",
+    description: "Premium accommodations with enhanced comfort and luxury",
+    image: "/images/room-2.jpg",
+    features: ["AC & WiFi", "Balcony View", "3 Guests"],
+    imagePosition: "right",
   },
   {
     id: 3,
-    name: 'Villa with Private Pool',
+    name: "Villa with Private Pool",
     description:
-      'Ultimate luxury with your own private pool and exclusive amenities for an unforgettable stay',
-    image: '/images/room-3.jpg',
-    features: ['Private Pool', 'Full Kitchen', '4-6 Guests'],
-    imagePosition: 'left',
+      "Ultimate luxury with your own private pool and exclusive amenities for an unforgettable stay",
+    image: "/images/room-3.jpg",
+    features: ["Private Pool", "Full Kitchen", "4-6 Guests"],
+    imagePosition: "left",
   },
 ];
 
 export default function RoomsSection() {
   const handleSmoothScroll = (e) => {
     e.preventDefault();
-    const element = document.getElementById('contact');
+    const element = document.getElementById("contact");
     if (element) {
       const offset = 70;
       const elementPosition = element.getBoundingClientRect().top;
       const offsetPosition = elementPosition + window.pageYOffset - offset;
       window.scrollTo({
         top: offsetPosition,
-        behavior: 'smooth',
+        behavior: "smooth",
       });
     }
   };
@@ -68,7 +68,9 @@ export default function RoomsSection() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.2 }}
               className={`flex flex-col ${
-                room.imagePosition === 'right' ? 'lg:flex-row-reverse' : 'lg:flex-row'
+                room.imagePosition === "right"
+                  ? "lg:flex-row-reverse"
+                  : "lg:flex-row"
               } gap-0 bg-white rounded-lg overflow-hidden shadow-lg`}
             >
               {/* Image */}
@@ -95,12 +97,14 @@ export default function RoomsSection() {
                     {room.features.map((feature, idx) => (
                       <div key={idx} className="flex items-center gap-2">
                         <CheckCircle className="w-5 h-5 text-[#2D9B9E]" />
-                        <span className="text-sm text-[#6c757d]">{feature}</span>
+                        <span className="text-sm text-[#6c757d]">
+                          {feature}
+                        </span>
                       </div>
                     ))}
                   </div>
                   <a
-                    href="tel:7875450365"
+                    href="tel:7709965918"
                     onClick={handleSmoothScroll}
                     className="inline-flex items-center gap-2 bg-[#FFA500] text-white px-8 py-3 rounded-full font-semibold text-sm shadow-lg shadow-[#FFA500]/30 hover:bg-[#2D9B9E] hover:shadow-[#2D9B9E]/40 transform hover:-translate-y-0.5 transition-all duration-300"
                   >
@@ -117,5 +121,3 @@ export default function RoomsSection() {
     </section>
   );
 }
-
-

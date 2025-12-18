@@ -1,15 +1,19 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import Image from 'next/image';
-import { X } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { useState } from "react";
+import Image from "next/image";
+import { X } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const galleryImages = [
-  { src: '/images/insta-1.jpg', caption: 'Pool Area' },
-  { src: '/images/insta-2.jpg', caption: 'Dining' },
-  { src: '/images/insta-3.jpg', caption: 'Rooms' },
-  { src: '/images/insta-4.jpg', caption: 'Beach' },
+  { src: "/images/insta-1.jpg", caption: "Resort View" },
+  { src: "/images/insta-2.jpg", caption: "Accommodations" },
+  { src: "/images/insta-3.jpg", caption: "Rooms" },
+  { src: "/images/insta-4.jpg", caption: "Facilities" },
+  { src: "/images/insta-5.jpg", caption: "Dining Area" },
+  { src: "/images/insta-6.jpg", caption: "Resort Exterior" },
+  { src: "/images/insta-7.jpg", caption: "Guest Areas" },
+  { src: "/images/insta-8.jpg", caption: "Resort Amenities" },
 ];
 
 export default function GallerySection() {
@@ -99,5 +103,3 @@ export default function GallerySection() {
     </>
   );
 }
-
-

@@ -1,4 +1,4 @@
-import { Phone, Mail } from 'lucide-react';
+import { Phone, Mail, Clock } from "lucide-react";
 
 export default function BookingCTA() {
   return (
@@ -15,17 +15,35 @@ export default function BookingCTA() {
               </p>
             </div>
 
+            {/* Check-in/Check-out Times */}
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-10 pb-8 border-b border-white/20">
+              <div className="flex items-center gap-3 text-white">
+                <Clock className="w-5 h-5 text-[#5EC4C7]" />
+                <div>
+                  <span className="text-sm text-white/80">Check-in:</span>
+                  <span className="ml-2 font-semibold">12:00 PM</span>
+                </div>
+              </div>
+              <div className="flex items-center gap-3 text-white">
+                <Clock className="w-5 h-5 text-[#5EC4C7]" />
+                <div>
+                  <span className="text-sm text-white/80">Check-out:</span>
+                  <span className="ml-2 font-semibold">11:00 AM</span>
+                </div>
+              </div>
+            </div>
+
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5 max-w-4xl mx-auto">
               <a
-                href="tel:7875450365"
+                href="tel:7709965918"
                 className="bg-[#FFA500] text-white rounded-xl p-5 font-semibold text-base shadow-lg shadow-[#FFA500]/40 hover:bg-white hover:text-[#2D9B9E] transform hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-3 min-h-[60px]"
               >
                 <Phone className="w-5 h-5" />
-                Call: 7875450365
+                Book Now: +91 7709965918
               </a>
 
               <a
-                href="mailto:frontoffice@hilloraresort.com"
+                href="mailto:Frontoffice@hilloraresort.com"
                 className="bg-[#FFA500] text-white rounded-xl p-5 font-semibold text-base shadow-lg shadow-[#FFA500]/40 hover:bg-white hover:text-[#2D9B9E] transform hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-3 min-h-[60px]"
               >
                 <Mail className="w-5 h-5" />
@@ -38,5 +56,3 @@ export default function BookingCTA() {
     </section>
   );
 }
-
-

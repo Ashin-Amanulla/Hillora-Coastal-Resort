@@ -1,7 +1,8 @@
-'use client';
+"use client";
 
-import { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
+import { useState, useEffect } from "react";
+import Image from "next/image";
+import { Menu, X } from "lucide-react";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -12,8 +13,8 @@ export default function Navbar() {
       setIsScrolled(window.scrollY > 50);
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const handleSmoothScroll = (e, targetId) => {
@@ -26,36 +27,43 @@ export default function Navbar() {
 
       window.scrollTo({
         top: offsetPosition,
-        behavior: 'smooth',
+        behavior: "smooth",
       });
     }
     setIsMobileMenuOpen(false);
   };
 
   const navLinks = [
-    { href: '#home', label: 'Home' },
-    { href: '#facilities', label: 'Facilities' },
-    { href: '#rooms', label: 'Rooms' },
-    { href: '#about', label: 'About' },
-    { href: '#contact', label: 'Contact' },
+    { href: "#home", label: "Home" },
+    { href: "#facilities", label: "Facilities" },
+    { href: "#rooms", label: "Rooms" },
+    { href: "#about", label: "About" },
+    { href: "#contact", label: "Contact" },
   ];
 
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? 'bg-white shadow-lg shadow-[#2D9B9E]/15'
-          : 'bg-white/95 backdrop-blur-md'
+          ? "bg-white shadow-lg shadow-[#2D9B9E]/15"
+          : "bg-white/95 backdrop-blur-md"
       }`}
     >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           <a
             href="#home"
-            onClick={(e) => handleSmoothScroll(e, 'home')}
-            className="text-2xl font-bold text-[#2D9B9E] tracking-tight"
+            onClick={(e) => handleSmoothScroll(e, "home")}
+            className="flex items-center h-full"
           >
-            Hillora<span className="text-[#1A7577] font-normal"> Coastal Resort</span>
+            <Image
+              src="/images/logo.jpeg"
+              alt="Hillora Coastal Resort"
+              width={150}
+              height={60}
+              className="h-12 md:h-14 w-auto object-contain"
+              priority
+            />
           </a>
 
           {/* Desktop Navigation */}
@@ -105,5 +113,3 @@ export default function Navbar() {
     </nav>
   );
 }
-
-

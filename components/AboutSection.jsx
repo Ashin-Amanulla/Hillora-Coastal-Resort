@@ -1,20 +1,20 @@
-'use client';
+"use client";
 
-import { motion } from 'framer-motion';
-import Image from 'next/image';
-import { Phone } from 'lucide-react';
+import { motion } from "framer-motion";
+import Image from "next/image";
+import { Phone } from "lucide-react";
 
 export default function AboutSection() {
   const handleSmoothScroll = (e) => {
     e.preventDefault();
-    const element = document.getElementById('contact');
+    const element = document.getElementById("contact");
     if (element) {
       const offset = 70;
       const elementPosition = element.getBoundingClientRect().top;
       const offsetPosition = elementPosition + window.pageYOffset - offset;
       window.scrollTo({
         top: offsetPosition,
-        behavior: 'smooth',
+        behavior: "smooth",
       });
     }
   };
@@ -72,25 +72,25 @@ export default function AboutSection() {
                 Experience Paradise in Arpora, Goa
               </h2>
               <p className="text-lg text-[#6c757d] leading-relaxed mb-5">
-                Nestled in the heart of Arpora, Goa, Hillora Coastal Resort offers
-                an unparalleled blend of luxury, comfort, and coastal beauty. Our
-                resort features world-class amenities including private pool
-                villas, deluxe accommodations, fine dining, and exciting
-                watersports activities.
+                Nestled in the heart of Arpora, Goa, Hillora Coastal Resort
+                offers an unparalleled blend of luxury, comfort, and coastal
+                beauty. Our resort features world-class amenities including
+                private pool villas, deluxe accommodations, fine dining, and
+                exciting watersports activities.
               </p>
               <p className="text-lg text-[#6c757d] leading-relaxed mb-8">
-                Whether you're seeking a romantic getaway, a family vacation, or a
-                corporate retreat, Hillora provides the perfect setting with
+                Whether you're seeking a romantic getaway, a family vacation, or
+                a corporate retreat, Hillora provides the perfect setting with
                 modern facilities, warm hospitality, and convenient access to
                 Goa's best attractions.
               </p>
               <a
-                href="tel:7875450365"
+                href="tel:7709965918"
                 onClick={handleSmoothScroll}
                 className="inline-flex items-center gap-2 bg-[#FFA500] text-white px-9 py-4 rounded-full font-semibold text-base shadow-lg shadow-[#FFA500]/30 hover:bg-[#2D9B9E] hover:shadow-[#2D9B9E]/40 transform hover:-translate-y-0.5 transition-all duration-300"
               >
                 <Phone className="w-5 h-5" />
-                Call to Reserve: 7875450365
+                Book Now: +91 7709965918
               </a>
             </motion.div>
           </div>
@@ -99,5 +99,3 @@ export default function AboutSection() {
     </section>
   );
 }
-
-
