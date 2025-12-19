@@ -41,14 +41,17 @@ export default function Footer() {
           <div>
             <div className="mb-6">
               <Image
-                src="/images/logo.jpeg"
+                src="/images/logo.png"
                 alt="Hillora Coastal Resort"
                 width={150}
                 height={60}
                 className="h-12 w-auto object-contain mb-4"
               />
             </div>
-            <h2 className="text-2xl font-bold mb-6">Hillora Coastal Resort</h2>
+            <h2 className="text-2xl font-bold mb-2">Hillora Coastal Resort</h2>
+            <p className="text-white/70 text-sm mb-6 italic">
+              A Unit of Navodaya Hospitality Services
+            </p>
             <p className="text-white/80 leading-relaxed mb-6">
               Experience luxury and serenity at Hillora Coastal Resort in
               Arpora, Goa. Your perfect coastal escape awaits with world-class
@@ -57,28 +60,27 @@ export default function Footer() {
             <div className="flex flex-wrap items-center gap-4">
               <div className="flex space-x-4">
                 <a
-                  href="#"
+                  href="https://www.facebook.com/profile.php?id=61584864930812"
                   className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-[#2D9B9E] transform hover:-translate-y-1 transition-all duration-300"
                   aria-label="Facebook"
                 >
                   <Facebook className="w-5 h-5" />
                 </a>
                 <a
-                  href="#"
+                  href="https://www.instagram.com/hilloracoastalresort/?igsh=MXE1b255dGZpbWRuMQ%3D%3D"
                   className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-[#2D9B9E] transform hover:-translate-y-1 transition-all duration-300"
                   aria-label="Instagram"
                 >
                   <Instagram className="w-5 h-5" />
                 </a>
                 <a
-                  href="#"
+                  href="https://x.com/hilloracoastal"
                   className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-[#2D9B9E] transform hover:-translate-y-1 transition-all duration-300"
                   aria-label="Twitter"
                 >
                   <Twitter className="w-5 h-5" />
                 </a>
               </div>
-             
             </div>
           </div>
 
@@ -183,8 +185,6 @@ export default function Footer() {
             </ul>
           </div>
         </div>
-
-      
 
         {/* Copyright */}
         <div className="border-t border-white/20 pt-8 text-center">

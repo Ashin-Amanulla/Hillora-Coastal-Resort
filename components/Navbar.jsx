@@ -57,7 +57,7 @@ export default function Navbar() {
             className="flex items-center h-full"
           >
             <Image
-              src="/images/logo.jpeg"
+              src="/images/logo.png"
               alt="Hillora Coastal Resort"
               width={200}
               height={60}

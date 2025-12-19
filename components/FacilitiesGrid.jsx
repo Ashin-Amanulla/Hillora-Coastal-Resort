@@ -23,6 +23,7 @@ import {
   FileCheck,
   Flame,
   Zap,
+  Wind,
 } from "lucide-react";
 
 const popularAmenities = [
@@ -32,6 +33,7 @@ const popularAmenities = [
   { icon: Sparkles, name: "Free Toiletries" },
   { icon: Home, name: "Daily Housekeeping" },
   { icon: Clock, name: "24-Hour Front Desk" },
+  { icon: Wind, name: "All AC Rooms" },
 ];
 
 const otherAmenities = [
@@ -98,7 +100,7 @@ export default function FacilitiesGrid() {
             Popular Amenities
           </h3>
           <motion.div
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-6 max-w-7xl mx-auto"
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-7 gap-6 max-w-7xl mx-auto"
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
