@@ -82,21 +82,26 @@ export default function FacilitiesGrid() {
   return (
     <section
       id="facilities"
-      className="py-24 bg-white pattern-dots pattern-waves pattern-waves-bottom relative"
+      className="py-24 bg-gradient-to-b from-white via-[#f8f9fa] to-white relative overflow-hidden"
     >
-      <div className="container mx-auto px-4 relative z-10">
+      {/* Decorative elements */}
+      <div className="absolute top-20 left-0 w-72 h-72 bg-[#358A99]/5 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-20 right-0 w-96 h-96 bg-[#C9A962]/5 rounded-full blur-3xl"></div>
+
+      <div className="container mx-auto px-4 lg:px-8 relative z-10">
         <div className="text-center mb-16">
-          <span className="text-sm font-semibold text-[#2D9B9E] uppercase tracking-wider block mb-3">
+          <span className="inline-block px-4 py-1.5 bg-[#358A99]/10 border border-[#358A99]/20 rounded-full text-[#358A99] text-sm font-medium tracking-wider uppercase mb-4">
             Holiday in Goa with Us
           </span>
-          <h2 className="text-4xl md:text-5xl font-semibold text-[#212529] mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-[#212529] mb-6">
             World-Class Facilities & Amenities
           </h2>
+          <div className="w-20 h-1 bg-gradient-to-r from-[#358A99] to-[#C9A962] mx-auto rounded-full"></div>
         </div>
 
         {/* Popular Amenities Section */}
-        <div className="mb-16">
-          <h3 className="text-2xl md:text-3xl font-semibold text-[#212529] mb-8 text-center">
+        <div className="mb-20">
+          <h3 className="text-2xl md:text-3xl font-bold text-[#212529] mb-10 text-center">
             Popular Amenities
           </h3>
           <motion.div
@@ -112,9 +117,9 @@ export default function FacilitiesGrid() {
                 <motion.div
                   key={index}
                   variants={itemVariants}
-                  className="bg-gradient-to-br from-[#2D9B9E] to-[#5EC4C7] rounded-2xl p-8 border-2 border-[#2D9B9E] transform hover:-translate-y-2 shadow-xl shadow-[#2D9B9E]/20 transition-all duration-400 cursor-pointer"
+                  className="bg-[#358A99] rounded-xl p-8 transform hover:-translate-y-2 shadow-xl shadow-[#358A99]/20 hover:shadow-2xl hover:shadow-[#358A99]/30 transition-all duration-300 cursor-pointer group"
                 >
-                  <div className="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center bg-white/25">
+                  <div className="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center bg-white/20 group-hover:bg-white/30 transition-colors">
                     <Icon className="w-8 h-8 text-white" />
                   </div>
                   <h4 className="text-base font-semibold text-center text-white">
@@ -127,8 +132,8 @@ export default function FacilitiesGrid() {
         </div>
 
         {/* Other Amenities Section */}
-        <div className="mb-16">
-          <h3 className="text-2xl md:text-3xl font-semibold text-[#212529] mb-8 text-center">
+        <div className="mb-20">
+          <h3 className="text-2xl md:text-3xl font-bold text-[#212529] mb-10 text-center">
             Other Amenities
           </h3>
           <motion.div
@@ -144,10 +149,10 @@ export default function FacilitiesGrid() {
                 <motion.div
                   key={index}
                   variants={itemVariants}
-                  className="bg-white rounded-xl p-6 border-2 border-[#F5F1E8] hover:border-[#2D9B9E] hover:shadow-lg hover:shadow-[#2D9B9E]/10 hover:-translate-y-1 transition-all duration-300 cursor-pointer relative"
+                  className="bg-white rounded-xl p-6 border border-gray-100 hover:border-[#358A99]/30 hover:shadow-xl hover:shadow-[#358A99]/10 hover:-translate-y-1 transition-all duration-300 cursor-pointer group"
                 >
-                  <div className="w-12 h-12 mx-auto mb-3 rounded-full flex items-center justify-center bg-[#F5F1E8]">
-                    <Icon className="w-6 h-6 text-[#2D9B9E]" />
+                  <div className="w-12 h-12 mx-auto mb-3 rounded-full flex items-center justify-center bg-[#358A99]/10 group-hover:bg-[#358A99]/20 transition-colors">
+                    <Icon className="w-6 h-6 text-[#358A99]" />
                   </div>
                   <h4 className="text-sm font-medium text-center text-[#212529] leading-tight">
                     {amenity.name}
@@ -159,8 +164,11 @@ export default function FacilitiesGrid() {
         </div>
 
         {/* Google Review QR Code Section */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-8 max-w-2xl mx-auto mb-4">
-          <div className="relative w-80 h-80">
+        <div className="flex flex-col items-center justify-center max-w-2xl mx-auto">
+          <p className="text-[#358A99] font-medium mb-4 text-center">
+            Share Your Experience
+          </p>
+          <div className="relative w-72 h-72 bg-white p-4 rounded-xl shadow-lg">
             <Image
               src="/images/google-review-qr.jpeg"
               alt="Google Review QR Code"

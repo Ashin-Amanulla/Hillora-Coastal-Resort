@@ -66,7 +66,7 @@ export default function HeroSection() {
   return (
     <section
       id="home"
-      className="relative h-screen w-full overflow-hidden mt-20"
+      className="relative h-screen w-full overflow-hidden mt-[84px] lg:mt-[100px]"
     >
       <div className="relative h-full w-full">
         {slides.map((slide, index) => (
@@ -84,39 +84,54 @@ export default function HeroSection() {
               className="object-cover"
               sizes="100vw"
             />
-            {/* Dark overlay for better text readability */}
-            <div className="absolute inset-0 bg-black/30" />
-            {/* Gradient overlay */}
-            <div className="absolute inset-0 bg-gradient-to-br from-[#0D5E73]/50 via-[#2D9B9E]/40 to-transparent" />
+            {/* Premium dark overlay */}
+            <div className="absolute inset-0 bg-black/40" />
+            {/* Gradient overlay with brand colors */}
+            <div className="absolute inset-0 bg-gradient-to-br from-[#358A99]/60 via-[#358A99]/30 to-transparent" />
+            {/* Bottom vignette */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
           </div>
         ))}
       </div>
 
       {/* Slide Content */}
-      <div className="absolute inset-0 flex items-center justify-end z-10">
-        <div className="container mx-auto px-4">
-          <div className="max-w-2xl ml-auto relative">
+      <div className="absolute inset-0 flex items-center z-10">
+        <div className="container mx-auto px-4 lg:px-8">
+          <div className="max-w-3xl ml-auto relative">
             {slides.map((slide, index) => (
               <div
                 key={slide.id}
-                className={`transition-opacity duration-1000 ${
+                className={`transition-all duration-1000 ${
                   index === currentSlide
-                    ? "opacity-100 relative"
-                    : "opacity-0 absolute inset-0"
+                    ? "opacity-100 relative translate-y-0"
+                    : "opacity-0 absolute inset-0 translate-y-4"
                 }`}
               >
-                <h2 className="text-2xl font-normal text-white mb-4 tracking-wider uppercase">
+                <span className="inline-block px-4 py-1.5 bg-[#C9A962]/20 backdrop-blur-sm border border-[#C9A962]/40 rounded-full text-[#C9A962] text-sm font-medium tracking-wider uppercase mb-6">
                   {slide.title}
-                </h2>
-                <h1 className="text-5xl md:text-6xl font-bold text-white mb-8 leading-tight drop-shadow-lg">
+                </span>
+                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-8 leading-tight drop-shadow-2xl">
                   {slide.subtitle}
                 </h1>
                 <a
                   href="#contact"
                   onClick={handleSmoothScroll}
-                  className="inline-block bg-[#FFA500] text-white px-10 py-4 rounded-full font-semibold text-base shadow-lg shadow-[#FFA500]/40 hover:bg-[#2D9B9E] hover:shadow-[#2D9B9E]/50 transform hover:-translate-y-0.5 transition-all duration-300"
+                  className="inline-flex items-center gap-2 bg-[#C9A962] text-[#1a1a1a] px-10 py-4 rounded-sm font-semibold text-base shadow-2xl shadow-[#C9A962]/30 hover:bg-white hover:text-[#358A99] transform hover:-translate-y-1 transition-all duration-300"
                 >
                   {slide.ctaText}
+                  <svg
+                    className="w-5 h-5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M17 8l4 4m0 0l-4 4m4-4H3"
+                    />
+                  </svg>
                 </a>
               </div>
             ))}
@@ -124,20 +139,30 @@ export default function HeroSection() {
         </div>
       </div>
 
-      {/* Slide Indicators */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex space-x-2">
+      {/* Premium Slide Indicators */}
+      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 flex items-center space-x-3">
         {slides.map((_, index) => (
           <button
             key={index}
             onClick={() => goToSlide(index)}
-            className={`h-2 rounded-full transition-all duration-300 ${
+            className={`h-1 rounded-full transition-all duration-500 ${
               index === currentSlide
-                ? "w-8 bg-[#FFA500]"
-                : "w-2 bg-white/50 hover:bg-white/70"
+                ? "w-10 bg-[#C9A962]"
+                : "w-3 bg-white/40 hover:bg-white/60"
             }`}
             aria-label={`Go to slide ${index + 1}`}
           />
         ))}
+      </div>
+
+      {/* Scroll indicator */}
+      <div className="absolute bottom-10 right-8 z-20 hidden lg:block">
+        <div className="flex flex-col items-center gap-2 text-white/60">
+          <span className="text-xs uppercase tracking-widest rotate-90 origin-center translate-y-8">
+            Scroll
+          </span>
+          <div className="w-[1px] h-16 bg-gradient-to-b from-white/60 to-transparent mt-12"></div>
+        </div>
       </div>
     </section>
   );

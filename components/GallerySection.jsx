@@ -191,15 +191,20 @@ export default function GallerySection() {
 
   return (
     <>
-      <section className="py-16 bg-gradient-to-b from-[#F8F9FA] to-[#E9ECEF] pattern-grid relative">
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="text-center mb-12">
-            <span className="text-sm font-semibold text-[#2D9B9E] uppercase tracking-wider block mb-3">
+      <section className="py-24 bg-gradient-to-b from-white via-[#f8f9fa] to-[#f0f7f8] relative overflow-hidden">
+        {/* Decorative elements */}
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-[#358A99]/5 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-[#C9A962]/5 rounded-full blur-3xl"></div>
+
+        <div className="container mx-auto px-4 lg:px-8 relative z-10">
+          <div className="text-center mb-16">
+            <span className="inline-block px-4 py-1.5 bg-[#358A99]/10 border border-[#358A99]/20 rounded-full text-[#358A99] text-sm font-medium tracking-wider uppercase mb-4">
               Gallery
             </span>
-            <h2 className="text-4xl md:text-5xl font-semibold text-[#212529] mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold text-[#212529] mb-6">
               Resort Photos
             </h2>
+            <div className="w-20 h-1 bg-gradient-to-r from-[#358A99] to-[#C9A962] mx-auto rounded-full"></div>
           </div>
 
           <div className="relative">
@@ -208,14 +213,14 @@ export default function GallerySection() {
               <>
                 <button
                   onClick={goToPrevPage}
-                  className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10 bg-white/90 hover:bg-white text-[#2D9B9E] p-3 rounded-full shadow-lg transition-all duration-300 hover:scale-110 hidden md:flex items-center justify-center"
+                  className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10 bg-white hover:bg-[#358A99] text-[#358A99] hover:text-white p-3 rounded-full shadow-xl transition-all duration-300 hover:scale-110 hidden md:flex items-center justify-center border border-gray-100"
                   aria-label="Previous images"
                 >
                   <ChevronLeft className="w-6 h-6" />
                 </button>
                 <button
                   onClick={goToNextPage}
-                  className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 bg-white/90 hover:bg-white text-[#2D9B9E] p-3 rounded-full shadow-lg transition-all duration-300 hover:scale-110 hidden md:flex items-center justify-center"
+                  className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 bg-white hover:bg-[#358A99] text-[#358A99] hover:text-white p-3 rounded-full shadow-xl transition-all duration-300 hover:scale-110 hidden md:flex items-center justify-center border border-gray-100"
                   aria-label="Next images"
                 >
                   <ChevronRight className="w-6 h-6" />
@@ -223,7 +228,7 @@ export default function GallerySection() {
               </>
             )}
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
               {currentImages.map((item, index) => {
                 const globalIndex = startIndex + index;
                 return (
@@ -233,19 +238,37 @@ export default function GallerySection() {
                     animate={{ opacity: 1, scale: 1 }}
                     exit={{ opacity: 0, scale: 0.9 }}
                     transition={{ duration: 0.4, delay: index * 0.05 }}
-                    className="relative h-64 sm:h-72 overflow-hidden rounded-lg cursor-pointer group"
+                    className="relative h-64 sm:h-72 overflow-hidden rounded-xl cursor-pointer group shadow-lg hover:shadow-2xl hover:shadow-[#358A99]/20 transition-all duration-500"
                     onClick={() => setSelectedImage(item)}
                   >
                     <Image
                       src={item.src}
                       alt={item.caption}
                       fill
-                      className="object-cover transition-transform duration-300 group-hover:scale-110"
+                      className="object-cover transition-transform duration-700 group-hover:scale-110"
                       sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                    <div className="absolute bottom-0 left-0 right-0 p-4 text-white font-semibold transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#358A99]/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                    <div className="absolute bottom-0 left-0 right-0 p-5 text-white font-semibold transform translate-y-full group-hover:translate-y-0 transition-transform duration-500">
                       {item.caption}
+                    </div>
+                    {/* Hover indicator */}
+                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                      <div className="w-14 h-14 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center border border-white/30">
+                        <svg
+                          className="w-6 h-6 text-white"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"
+                          />
+                        </svg>
+                      </div>
                     </div>
                   </motion.div>
                 );
@@ -254,10 +277,10 @@ export default function GallerySection() {
 
             {/* Pagination Dots */}
             {galleryImages.length > IMAGES_PER_PAGE && (
-              <div className="flex justify-center items-center gap-2 mt-8">
+              <div className="flex justify-center items-center gap-3 mt-10">
                 <button
                   onClick={goToPrevPage}
-                  className="md:hidden bg-white/90 hover:bg-white text-[#2D9B9E] p-2 rounded-full shadow-lg transition-all duration-300"
+                  className="md:hidden bg-white hover:bg-[#358A99] text-[#358A99] hover:text-white p-2.5 rounded-full shadow-lg transition-all duration-300 border border-gray-100"
                   aria-label="Previous images"
                 >
                   <ChevronLeft className="w-5 h-5" />
@@ -268,10 +291,10 @@ export default function GallerySection() {
                     <button
                       key={index}
                       onClick={() => goToPage(index)}
-                      className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
+                      className={`h-2 rounded-full transition-all duration-300 ${
                         currentPage === index
-                          ? "bg-[#2D9B9E] w-8"
-                          : "bg-white/50 hover:bg-white/70"
+                          ? "bg-[#C9A962] w-10"
+                          : "bg-[#358A99]/30 hover:bg-[#358A99]/50 w-3"
                       }`}
                       aria-label={`Go to page ${index + 1}`}
                     />
@@ -280,7 +303,7 @@ export default function GallerySection() {
 
                 <button
                   onClick={goToNextPage}
-                  className="md:hidden bg-white/90 hover:bg-white text-[#2D9B9E] p-2 rounded-full shadow-lg transition-all duration-300"
+                  className="md:hidden bg-white hover:bg-[#358A99] text-[#358A99] hover:text-white p-2.5 rounded-full shadow-lg transition-all duration-300 border border-gray-100"
                   aria-label="Next images"
                 >
                   <ChevronRight className="w-5 h-5" />
@@ -290,7 +313,7 @@ export default function GallerySection() {
 
             {/* Image Counter */}
             {galleryImages.length > IMAGES_PER_PAGE && (
-              <p className="text-center text-gray-600 mt-4 text-sm">
+              <p className="text-center text-[#358A99]/70 mt-6 text-sm font-medium">
                 Showing {startIndex + 1}-
                 {Math.min(endIndex, galleryImages.length)} of{" "}
                 {galleryImages.length} images
