@@ -74,6 +74,14 @@ export const metadata = {
     canonical: "https://www.hilloraresort.com",
   },
   category: "Travel & Tourism",
+  icons: {
+    icon: [
+      { url: "/images/logo.png", type: "image/png" },
+      { url: "/images/logo.jpeg", type: "image/jpeg" },
+    ],
+    shortcut: "/images/logo.png",
+    apple: "/images/logo.png",
+  },
 };
 
 export default function RootLayout({ children }) {
