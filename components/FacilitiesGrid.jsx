@@ -170,7 +170,7 @@ export default function FacilitiesGrid() {
           </p>
           <div className="relative w-72 h-72 bg-white p-4 rounded-xl shadow-lg">
             <Image
-              src="/images/google-review-qr.jpeg"
+              src="/images/google-review.jpeg"
               alt="Google Review QR Code"
               fill
               className="object-contain rounded-lg"

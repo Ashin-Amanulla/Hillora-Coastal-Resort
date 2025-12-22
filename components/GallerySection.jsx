@@ -7,10 +7,7 @@ import { motion, AnimatePresence } from "framer-motion";
 
 // All images from client-images folder
 const galleryImages = [
-  {
-    src: "/images/client-images/WhatsApp Image 2025-12-17 at 9.24.46 AM.jpeg",
-    caption: "Resort Gallery",
-  },
+ 
   {
     src: "/images/client-images/WhatsApp Image 2025-12-17 at 9.24.47 AM.jpeg",
     caption: "Resort Gallery",

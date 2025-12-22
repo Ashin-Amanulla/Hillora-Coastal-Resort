@@ -46,13 +46,7 @@ export default function Navbar() {
       {/* Top accent bar */}
       <div className="fixed top-0 left-0 right-0 z-[60] h-1 bg-gradient-to-r from-[#C9A962] via-[#E8D5A3] to-[#C9A962]"></div>
 
-      <nav
-        className={`fixed top-1 left-0 right-0 z-50 transition-all duration-500 ${
-          isScrolled
-            ? "bg-[#358A99]/98 backdrop-blur-md shadow-2xl"
-            : "bg-[#358A99]"
-        }`}
-      >
+      <nav className="fixed top-1 left-0 right-0 z-50 bg-[#358A99]">
         {/* Decorative bottom border */}
         <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-white/30 to-transparent"></div>
 
