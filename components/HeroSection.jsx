@@ -6,7 +6,7 @@ import Image from "next/image";
 const slides = [
   {
     id: 1,
-    image: "/images/bg_1.jpg",
+    image: "/images/bg_1.jpeg",
     title: "Welcome to Hillora",
     subtitle: "Your Perfect Coastal Escape in Arpora, Goa",
     ctaText: "Book Your Escape",
